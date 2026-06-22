@@ -9,6 +9,7 @@ function getComputerChoice(val) {
   }
 }
 
-console.log(getComputerChoice(3));
-console.log(getComputerChoice(3));
-console.log(getComputerChoice(3));
+function getPlayerChoice() {
+  let choice = prompt("Rock, Paper, Scissors ? ");
+  return choice.toLowerCase;
+}
