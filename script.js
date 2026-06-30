@@ -17,61 +17,61 @@ function getPlayerChoice() {
   return choice;
 }
 
-// console.log(getPlayerChoice());
-// console.log(getComputerChoice());
-
-// function playRound(playerChoice, computerChoice) {
 function playRound() {
   let playerChoice = getPlayerChoice().toLowerCase();
   let computerChoice = getComputerChoice();
-  console.log("playerchoice = " + playerChoice);
-  console.log("computerChoice = " + computerChoice);
   if (computerChoice === "rock" && playerChoice === "scissors") {
     computerScore += 1;
-    console.log(`Computer wins, Rock beats Scissors 
-      Current score : Computer : ${computerScore} - Human : ${humanScore}`);
+    const container = document.querySelector(".results");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = `Computer wins, Rock beats Scissors 
+      Current score : Computer : ${computerScore} - Human : ${humanScore}`;
+    container.appendChild(paragraph);
   } else if (computerChoice === "rock" && playerChoice === "paper") {
     humanScore += 1;
-    console.log(`Player wins, Paper beats Rock
-      Current score : Computer : ${computerScore} - Human : ${humanScore}`);
+    const container = document.querySelector(".results");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = `Player wins, Paper beats Rock
+      Current score : Computer : ${computerScore} - Human : ${humanScore}`;
+    container.appendChild(paragraph);
   } else if (computerChoice === "scissors" && playerChoice === "paper") {
     computerScore += 1;
-    console.log(`Computer wins, Scissors beat paper
-      Current score : Computer : ${computerScore} - Human : ${humanScore}`);
+    const container = document.querySelector(".results");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = `Computer wins, Scissors beat paper
+      Current score : Computer : ${computerScore} - Human : ${humanScore}`;
+    container.appendChild(paragraph);
   } else if (computerChoice === "scissors" && playerChoice === "rock") {
     humanScore += 1;
-    console.log(`Player wins, Rock beats Scissors
-      Current score : Computer : ${computerScore} - Human : ${humanScore}`);
+    const container = document.querySelector(".results");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = `Player wins, Rock beats Scissors
+      Current score : Computer : ${computerScore} - Human : ${humanScore}`;
+    container.appendChild(paragraph);
   } else if (computerChoice === "paper" && playerChoice === "rock") {
     computerScore += 1;
-    console.log(`Computer wins, Paper beats Rock
-      Current score : Computer : ${computerScore} - Human : ${humanScore}`);
+    const container = document.querySelector(".results");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = `Computer wins, Paper beats Rock
+      Current score : Computer : ${computerScore} - Human : ${humanScore}`;
+    container.appendChild(paragraph);
   } else if (computerChoice === "paper" && playerChoice === "scissors") {
     humanScore += 1;
-    console.log(`Player wins, Scissors beats Paper
-      Current score : Computer : ${computerScore} - Human : ${humanScore}`);
+    const container = document.querySelector(".results");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = `Player wins, Scissors beats Paper
+      Current score : Computer : ${computerScore} - Human : ${humanScore}`;
+    container.appendChild(paragraph);
   } else {
-    console.log("It's a draw");
+    const container = document.querySelector(".results");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = "It's a draw";
+    container.appendChild(paragraph);
   }
   console.log("end playround");
 }
 
-// console.log(playRound(playerChoice, computerChoice));
-
-// function playGame() {
-//   playRound(playerChoice, computerChoice);
-
-//   if (humanScore >= 3) {
-//     console.log("Congratulations ! You won");
-//   } else if (computerScore >= 3) {
-//     console.log("Sorry ! you lost");
-//   } else {
-//     alert("Another round ?");
-//     playRound(playerChoice, computerChoice);
-//   }
-// }
-
-function playGame2() {
+function playGame() {
   let round = 0;
   while (humanScore < 5 || computerScore < 5) {
     round++;
@@ -90,4 +90,4 @@ function playGame2() {
   console.log("end prog");
 }
 
-playGame2();
+playRound();
